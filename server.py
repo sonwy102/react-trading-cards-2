@@ -88,10 +88,10 @@ def add_card():
     name = request.form.get('name')
     skill = request.form.get('skill')
 
-    new_card = Card(name=name, skill=skill)
-    db.session.add(new_card)
-    db.session.commit()
-
+    # new_card = Card(name=name, skill=skill)
+    # db.session.add(new_card)
+    # db.session.commit()
+    DATA["cards"].append({"name":name, "skill":skill, "imgUrl": None}) 
     return jsonify({"success": True})
 
 @app.route("/cards-jquery")
